@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Voix Claires – Numéros d'Urgence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #0a0a0a;
+    --text: #ffffff;
+    --gray: #bdbdbd;
+    --card: #111;
+    --border: #222;
+}
+
+body.light {
+    --bg: #f5f5f5;
+    --text: #0a0a0a;
+    --gray: #444;
+    --card: #ffffff;
+    --border: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.6s ease, color 0.6s ease;
+    overflow-x: hidden;
+}
+
+/* ===== NAV ===== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+body.light nav { background: rgba(255,255,255,0.7); }
+
+nav img {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--text);
+    transform: scale(1.15);
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--text);
+    transition: 0.4s;
+}
+
+nav a:hover::after { width: 100%; }
+
+/* ===== THEME SWITCH ===== */
+.theme-switch {
+    margin-left: 30px;
+    width: 56px;
+    height: 30px;
+    background: var(--border);
+    border-radius: 999px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch span {
+    width: 24px;
+    height: 24px;
+    margin-left: 3px;
+    border-radius: 50%;
+    background: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: transform 0.45s ease;
+}
+
+body.light .theme-switch span {
+    transform: translateX(26px) rotate(360deg);
+}
+
+/* ===== PAGE CONTENT ===== */
+section {
+    padding: 140px 20px 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h1, h2 {
+    font-weight: 800;
+}
+
+h1 { font-size: 2.8rem; margin-bottom: 20px; text-align: center; }
+h2 { font-size: 2rem; margin-top: 40px; margin-bottom: 15px; }
+
+p, li {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+/* ===== CARDS/SECTIONS ===== */
+.card-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.card-section:hover {
+    transform: translateY(-3px);
+    border-color: var(--text);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--gray);
+    border-top: 1px solid var(--border);
+}
+
+@media(max-width: 768px) {
+    nav { padding: 15px 30px; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <img src="Logo.png" alt="Les Voix Claires">
+    <div style="display:flex; align-items:center;">
+        <a href="index.html">Accueil</a>
+        <a href="urgence.html">Urgences</a>
+        <div class="theme-switch" onclick="toggleTheme()">
+            <span id="themeIcon">🌙</span>
+        </div>
+    </div>
+</nav>
+
+<section>
+    <h1>Numéros d'Urgence</h1>
+
+    <div class="card-section">
+        <h2>📞 URGENCES VITALES</h2>
+        <ul>
+            <li>112 – Numéro d’urgence européen (police, pompiers, ambulance)</li>
+            <li>15 – SAMU (urgence médicale)</li>
+            <li>17 – Police secours</li>
+            <li>18 – Pompiers</li>
+            <li>114 – Urgences par SMS (sourds/malentendants)</li>
+        </ul>
+    </div>
+
+    <div class="card-section">
+        <h2>🚑 SANTÉ & PSYCHOLOGIE</h2>
+        <ul>
+            <li>3114 – Prévention suicide (24h/24)</li>
+            <li>0 800 130 000 – Cellule psychologique (crises majeures)</li>
+            <li>116 117 – Médecin de garde (hors urgence vitale)</li>
+            <li>0 800 235 236 – Alcool info service</li>
+            <li>0 800 23 13 13 – Cannabis info service</li>
+            <li>0 800 840 800 – Tabac info service</li>
+            <li>0 800 858 858 – SOS Suicide</li>
+        </ul>
+    </div>
+
+    <div class="card-section">
+        <h2>🧒 ENFANTS / ENLÈVEMENTS / VIOLENCES</h2>
+        <ul>
+            <li>119 – Allô Enfance en Danger</li>
+            <li>116 000 – Enfants disparus / enlèvements</li>
+            <li>3919 – Violences conjugales</li>
+            <li>3018 – Harcèlement scolaire</li>
+            <li>0 805 802 804 – Violences sexuelles</li>
+            <li>0 800 05 95 95 – Enfance & violences sexuelles</li>
+        </ul>
+    </div>
+
+    <div class="card-section">
+        <h2>🌊 CATASTROPHES / RISQUES / INONDATIONS</h2>
+        <ul>
+            <li>112 – Urgence européenne (catastrophes, inondations)</li>
+            <li>18 – Pompiers (inondations, feux, accidents)</li>
+            <li>196 – Secours en mer</li>
+            <li>191 – Urgences aéronautiques</li>
+            <li>0 800 100 200 – Info Sécurité Civile (selon situations)</li>
+        </ul>
+    </div>
+
+    <div class="card-section">
+        <h2>🏠 SITUATIONS SOCIALES & AIDE</h2>
+        <ul>
+            <li>115 – Hébergement d’urgence</li>
+            <li>116 006 – Aide aux victimes</li>
+            <li>0 800 360 360 – Handicap / situations complexes</li>
+            <li>0 800 47 47 47 – Drogues info service</li>
+            <li>0 810 004 333 – Info escroqueries</li>
+        </ul>
+    </div>
+
+    <div class="card-section">
+        <h2>📋 ADMINISTRATION & INFOS</h2>
+        <ul>
+            <li>3939 – Service public (infos administratives)</li>
+            <li>0 800 006 006 – Aide aux victimes (numéro national)</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    © 2025 Les Voix Claires – Association contre le harcèlement
+</footer>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("light");
+    document.getElementById("themeIcon").textContent =
+        document.body.classList.contains("light") ? "☀️" : "🌙";
+}
+</script>
+
+</body>
+</html>
